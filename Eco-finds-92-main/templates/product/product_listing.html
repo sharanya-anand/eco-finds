@@ -1,0 +1,208 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Second life | Listings</title>
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/static/CSS/product_listing.css" />
+</head>
+<body>
+  <!-- Animated Background Shapes -->
+  <div class="bg-shape shape-circle circle-1"></div>
+  <div class="bg-shape shape-circle circle-2"></div>
+  <div class="bg-shape shape-blob blob-1"></div>
+  <div class="bg-shape shape-blob blob-2"></div>
+
+  <!-- Header / Navigation -->
+  <header class="header animate-fade-down">
+    <div class="container header-container">
+      <div class="logo">
+        <a href="#">Second Life</a>
+      </div>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="/dashboard" class="active">Home</a></li>
+          <li><a href="/listings">My Listings</a></li>
+          <li><a href="/">View Cart</a></li>
+          <li><a href="/profile">Profile</a></li>
+         
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <span class="user-greeting animate-fade-in-up" style="animation-delay: 0.4s;">Hello, <strong>Aditya</strong></span>
+        <a href="/logout" class="btn logout-link animate-pop-in" style="animation-delay: 0.6s;">
+          Log Out
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Listing Page Main Content -->
+  <main class="listing-main">
+    <div class="container">
+      <!-- Page Title & Search Bar -->
+      <section class="listing-header animate-fade-in-up" style="animation-delay: 0.8s;">
+        <h1 class="listing-title">Discover Unique Finds</h1>
+        <div class="search-bar">
+          <input
+            type="text"
+            placeholder="Search by keyword, category, or location"
+            aria-label="Search Listings"
+          />
+          <button class="btn search-btn animate-pop-in" style="animation-delay: 1s;">Search</button>
+        </div>
+      </section>
+
+      <!-- Filter Tags -->
+      <section class="filter-tags animate-fade-in-up" style="animation-delay: 1.2s;">
+        <button class="tag-btn active">All</button>
+        <button class="tag-btn">Furniture</button>
+        <button class="tag-btn">Electronics</button>
+        <button class="tag-btn">Home Decor</button>
+        <button class="tag-btn">Books</button>
+        <button class="tag-btn">Clothing</button>
+      </section>
+
+      <!-- Listings Grid -->
+      <section class="listings-grid animate-fade-in-up" style="animation-delay: 1.4s;">
+        <!-- Listing Card 1 -->
+        <div class="listing-card animate-pop-in" style="animation-delay: 1.6s;">
+          <img src="https://purepng.com/public/uploads/large/samsung-phone-270.png" alt="Mobile" />
+          <div class="card-content">
+            <h3 class="card-title">samsung-phone</h3>
+            <p class="card-price">₹7,500</p>
+             <p class="card-title">Samsung Galaxy ultra 5G smart phone,With charger </p>
+            <p class="card-location">Bengaluru,Karnataka</p>
+               <button class="btn view-btn" onclick="addToCart()">Add to Cart</button>
+               
+  </div>
+</div>
+
+<script>
+  function addToCart() {
+    alert("Product added to cart!");
+  }
+</script>
+
+        <!-- Listing Card 2 -->
+        <div class="listing-card animate-pop-in" style="animation-delay: 1.8s;">
+          <img src="https://th.bing.com/th/id/R.b5482dee22bfc075810abe6bf6f3ea8c?rik=dyNslSOyZ0tomQ&riu=http%3a%2f%2fimages.antiquesatlas.com%2fdealer-stock-images%2fsuttonantieks%2fVictorian_Dining_Table__Chairs_as087610z-1.jpg&ehk=SC9mgZwaVCcRibMd9HESPCl7M51vlerSAd%2btY5Hn5AM%3d&risl=&pid=ImgRaw&r=0" alt="Antique Table" />
+          <div class="card-content">
+            <h3 class="card-title">Dining Table Set</h3>
+            <p class="card-price">₹20,000</p>
+             <p class="card-title">Dining set for living room home ,hall,hotel.Wooden table </p>
+            <p class="card-location">Pondichery,Tamil Nadu</p>
+             <button class="btn view-btn" onclick="addToCart()">Add to Cart</button>
+  </div>
+</div>
+
+<script>
+  function addToCart() {
+    alert("Product added to cart!");
+  }
+</script>
+   <!-- Listing Card 3 -->
+<div class="listing-card animate-pop-in" style="animation-delay: 2s;">
+  <img src="https://cdn11.bigcommerce.com/s-x3ki4mm/images/stencil/1280x1280/products/940/1292/Bosch_impact-drilling_machine-gsb-550-electrician-kit-06011a15l2__17123.1492614979.png?c=2&imbypass=on" alt="Drilling Tool" />
+  <div class="card-content">
+    <h3 class="card-title">Drilling Machine</h3>
+    <p class="card-price">₹2,500</p>
+    <p class="card-title">Screwing & Drilling set for home,office & DIY projects </p>
+    <p class="card-location">Tumkur, Karnataka</p>
+    <button class="btn view-btn" onclick="addToCart()">Add to Cart</button>
+  </div>
+</div>
+
+<script>
+  function addToCart() {
+    alert("Product added to cart!");
+  }
+</script>
+        <!-- Listing Card 4 -->
+        <div class="listing-card animate-pop-in" style="animation-delay: 2.2s;">
+          <img src="https://images.pexels.com/photos/51342/books-education-school-literature-51342.jpeg?auto=compress&cs=tinysrgb&h=350" alt="BOOKS" />
+          <div class="card-content">
+            <h3 class="card-title">Novels</h3>
+            <p class="card-price">₹500</p>
+             <p class="card-title">Best books to read in the free time. </p>
+            <p class="card-location">Udupi,Karnataka</p>
+              <button class="btn view-btn" onclick="addToCart()">Add to Cart</button>
+  </div>
+</div>
+
+<script>
+  function addToCart() {
+    alert("Product added to cart!");
+  }
+</script>
+
+        <!-- Listing Card 5 -->
+        <div class="listing-card animate-pop-in" style="animation-delay: 2.4s;">
+          <img src="https://th.bing.com/th/id/R.9513e43f8ab0c7341024abbdfbfa3ed9?rik=66%2bOdU76E1iuFA&riu=http%3a%2f%2fwww.superiorfoodmachinery.com%2fimages%2fproducts%2fzoom%2f1353314409-63360000.jpg&ehk=e0iyuhAt5DZ4bD%2ffdbdgevFbDo4zU6oHVAaKSQZ5yhA%3d&risl=&pid=ImgRaw&r=0" alt="Oven" />
+          <div class="card-content">
+            <h3 class="card-title">Electric Oven</h3>
+            <p class="card-price">₹5000</p>
+             <p class="card-title">Pansonic 27L covention microwave oven </p>
+            <p class="card-location">America</p>
+               <button class="btn view-btn" onclick="addToCart()">Add to Cart</button>
+  </div>
+</div>
+
+<script>
+  function addToCart() {
+    alert("Product added to cart!");
+  }
+</script>
+
+        
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer animate-fade-up" style="animation-delay: 3s;">
+    <div class="container footer-container">
+      <ul class="footer-links">
+        <li><a href="/help">Help Center</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+      </ul>
+      <div class="social-icons">
+        <a href="#" aria-label="Twitter">🐦</a>
+        <a href="#" aria-label="Facebook">📘</a>
+        <a href="#" aria-label="Instagram">📷</a>
+      </div>
+      <p class="footer-copy">© 2023 Second Life. All rights reserved.</p>
+      <p class="footer-contact">support@secondlife.com | +91  9035074567</p>
+    </div>
+
+
+    <script>
+  function addToCart() {
+    const card = event.target.closest(".listing-card");
+    const title = card.querySelector(".card-title").textContent;
+    const price = card.querySelector(".card-price").textContent;
+    const location = card.querySelector(".card-location").textContent;
+    const image = card.querySelector("img").src;
+
+    const item = { title, price, location, image };
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push(item);
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert("Product added to cart!");
+  }
+</script>
+
+  </footer>
+</body>
+</html>
+
+

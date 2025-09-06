@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoFinds | Dashboard</title>
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  {% block extra_css %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS/home.css') }}" />
+  {% endblock %}
+</head>
+<body>
+  <!-- Animated Background Shapes -->
+  <div class="bg-shape shape-circle circle-1"></div>
+  <div class="bg-shape shape-circle circle-2"></div>
+  <div class="bg-shape shape-blob blob-1"></div>
+  <div class="bg-shape shape-blob blob-2"></div>
+
+  <!-- Header / Navigation -->
+  <header class="header animate-fade-down">
+    <div class="container header-container">
+      <div class="logo">
+        <a href="#">EcoFinds</a>
+      </div>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="/dashboard" class="active">Home</a></li>
+          <li><a href="/listings">My Listings</a></li>
+          <li><a href="/search">Search Items</a></li>
+          <li><a href="/profile">Profile</a></li>
+          <li><a href="/auction">Auction</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <span class="user-greeting animate-fade-in-up" style="animation-delay: 0.4s;">Hello, <strong>Jane Doe</strong></span>
+        <a href="/logout" class="btn logout-link animate-pop-in" style="animation-delay: 0.6s;">
+          Log Out
+        </a>
+      </div>
+    </div>
+  </header>
+
+  {% block content %}
+  <!-- Dashboard Content -->
+  <main class="main-content">
+    <div class="container">
+        <!-- Welcome Section -->
+        <section class="welcome-section animate-fade-in-up" style="animation-delay: 0.8s;">
+            <h1 class="welcome-title">Welcome Back, {{ current_user.username }}!</h1>
+            <p class="welcome-subtitle">Browse new listings, manage your items, and connect with the community.</p>
+        </section>
+
+        <!-- Quick Stats -->
+        <section class="stats-section">
+            <div class="stats-grid">
+                {% for stat in stats %}
+                <div class="stat-card animate-pop-in" style="animation-delay: {{ loop.index * 0.2 + 0.8 }}s;">
+                    <div class="stat-icon">{{ stat.icon }}</div>
+                    <div class="stat-info">
+                        <h3>{{ stat.title }}</h3>
+                        <p class="stat-value">{{ stat.value }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- Recent Listings -->
+        <section class="recent-listings-section animate-fade-in-up" style="animation-delay: 1.8s;">
+            <h2 class="section-heading">Your Recent Listings</h2>
+            <div class="listings-grid">
+                {% for listing in recent_listings %}
+                <div class="listing-card animate-slide-in-{{ loop.index0 == 0 ? 'left' : (loop.index0 == 2 ? 'right' : 'up') }}" 
+                     style="animation-delay: {{ loop.index * 0.2 + 2 }}s;">
+                    <img src="{{ listing.image_url or 'https://via.placeholder.com/300x180?text=' + listing.name|urlencode }}" 
+                         alt="{{ listing.name }}" />
+                    <div class="listing-info">
+                        <h3>{{ listing.name }}</h3>
+                        <p class="listing-status">Status: {{ listing.status }}</p>
+                        <a href="{{ url_for('product.view', id=listing.id) }}" class="btn view-btn">View</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <a href="{{ url_for('product.listings') }}" class="btn all-listings-btn animate-pop-in" style="animation-delay: 2.6s;">
+                View All My Listings →
+            </a>
+        </section>
+
+        <!-- Community Spotlight -->
+        <section class="community-section animate-fade-in-up" style="animation-delay: 2.8s;">
+            <h2 class="section-heading">Community Spotlight</h2>
+            <div class="community-grid">
+                {% for spotlight in community_spotlights %}
+                <div class="community-card animate-slide-in-{{ loop.index0 == 0 ? 'left' : (loop.index0 == 2 ? 'right' : 'up') }}" 
+                     style="animation-delay: {{ loop.index * 0.2 + 3 }}s;">
+                    <div class="community-icon">{{ spotlight.icon }}</div>
+                    <p>"{{ spotlight.message }}" <strong>– {{ spotlight.author }}</strong></p>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+  </main>
+  {% endblock %}
+
+  <!-- Footer -->
+  <footer class="footer animate-fade-up" style="animation-delay: 3.6s;">
+    <div class="container footer-container">
+      <ul class="footer-links">
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+      <div class="social-icons">
+        <a href="#" aria-label="Twitter">🐦</a>
+        <a href="#" aria-label="Facebook">📘</a>
+        <a href="#" aria-label="Instagram">📷</a>
+      </div>
+      <p class="footer-copy">© 2023 EcoFinds. All rights reserved.</p>
+      <p class="footer-contact">support@ecofinds.com | +1 (800) 123-4567</p>
+    </div>
+  </footer>
+</body>
+</html>
+
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      /* Background gradient */
+      background: linear-gradient(135deg, #a8edea, #fed6e3);
+    }
+    .card {
+      background: #fff;
+      max-width: 600px;
+      margin: 20px auto;  /* keeps it centered horizontally */
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      overflow: hidden;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+    }
+    .card-content {
+      padding: 20px;
+    }
+    .card-content h2 {
+      margin: 0 0 10px;
+      font-size: 24px;
+    }
+    .card-content p {
+      color:#1475AD;
+      font-size: 15px; 
+      margin: 10px 0;
+    }
+    .price {
+      font-size: 20px;
+      font-weight: bold;
+      color: #28a745;
+      margin: 10px 0;
+    }
+    .btn {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 15px;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="text-align:center; color:#1475AD;">Product Details</h1>
+
+  <div class="card">
+    <img src="https://cdn11.bigcommerce.com/s-x3ki4mm/images/stencil/1280x1280/products/940/1292/Bosch_impact-drilling_machine-gsb-550-electrician-kit-06011a15l2__17123.1492614979.png?c=2&imbypass=on" alt="Product Image">
+    <div class="card-content">
+      <h2>Drilling Machine</h2>
+      <p>drilling machine to drill in lowest price</p>
+      <div class="price">₹2,000</div>
+      <button class="btn" onclick="addToCart()">Add to Cart</button>
+    </div>
+  </div>
+
+  <script>
+    function addToCart() {
+      alert("Product added to cart!");
+    }
+  </script>
+
+</body>
+</html>

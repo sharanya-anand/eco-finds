@@ -1,0 +1,153 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoFinds </title>
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/static/CSS/search.css" />
+</head>
+<body>
+  <!-- Animated Background Shapes -->
+  <div class="bg-shape shape-circle circle-1"></div>
+  <div class="bg-shape shape-circle circle-2"></div>
+  <div class="bg-shape shape-blob blob-1"></div>
+  <div class="bg-shape shape-blob blob-2"></div>
+
+  <!-- Header / Navigation -->
+  <header class="header animate-fade-down">
+    <div class="container header-container">
+      <div class="logo">
+        <a href="/">Second Life</a>
+      </div>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="/user/home" class="active">Home</a></li>
+        
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <span class="user-greeting animate-fade-in-up" style="animation-delay: 0.4s;">Hello, <strong>Aditya</strong></span>
+        <a href="/auth/logout" class="btn logout-link animate-pop-in" style="animation-delay: 0.6s;">
+          Log Out
+        </a>
+      </div>
+    </div>
+  </header>
+
+  
+  <!-- Search Main Content -->
+  <main class="search-main">
+    <div class="container">
+      <!-- Search Form Section -->
+      <section class="search-form-section animate-fade-in-up" style="animation-delay: 0.8s;">
+        <h1 class="section-title">Find Sustainable Goods</h1>
+        <form class="search-form" action="/search/results" method="GET">
+          <div class="form-row">
+            <input
+              type="text"
+              name="q"
+              placeholder="Keyword (e.g., chair, lamp…)"
+              aria-label="Keyword"
+            />
+            <select name="category" aria-label="Category">
+              <option value="">All Categories</option>
+              <option>Furniture</option>
+              <option>Electronics</option>
+              <option>Home Decor</option>
+              <option>Books</option>
+              <option>Clothing</option>
+            </select>
+            <input
+              type="text"
+              name="location"
+              placeholder="Location (city or zip)"
+              aria-label="Location"
+            />
+          </div>
+          <div class="form-row">
+            <input
+              type="number"
+              name="min_price"
+              placeholder="Min Price"
+              min="0"
+              aria-label="Min Price"
+            />
+            <input
+              type="number"
+              name="max_price"
+              placeholder="Max Price"
+              min="0"
+              aria-label="Max Price"
+            />
+            <button type="submit" class="btn search-btn animate-pop-in" style="animation-delay: 1.2s;">
+              Search
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Search Results Grid -->
+      <section class="results-section animate-fade-in-up" style="animation-delay: 1.4s;">
+        <h2 class="section-heading">Search Results</h2>
+        <div class="results-grid">
+          <!-- Example Result Card -->
+                 <!-- Listing Card 2 -->
+        <div class="listing-card animate-pop-in" style="animation-delay: 1.8s;">
+          <img src="https://th.bing.com/th/id/R.b5482dee22bfc075810abe6bf6f3ea8c?rik=dyNslSOyZ0tomQ&riu=http%3a%2f%2fimages.antiquesatlas.com%2fdealer-stock-images%2fsuttonantieks%2fVictorian_Dining_Table__Chairs_as087610z-1.jpg&ehk=SC9mgZwaVCcRibMd9HESPCl7M51vlerSAd%2btY5Hn5AM%3d&risl=&pid=ImgRaw&r=0" alt="Antique Table" />
+          <div class="card-content">
+            <h3 class="card-title">Dining Table Set</h3>
+            <p class="card-price">₹20,000</p>
+             <p class="card-title">Dining set for living room home ,hall,hotel.Wooden table </p>
+            <p class="card-location">Pondichery,Tamil Nadu</p>
+             <button class="btn view-btn" onclick="addToCart()">View Details</button>
+  </div>
+</div>
+          <div class="listing-card animate-pop-in" style="animation-delay: 2.4s;">
+          <img src="https://th.bing.com/th/id/R.9513e43f8ab0c7341024abbdfbfa3ed9?rik=66%2bOdU76E1iuFA&riu=http%3a%2f%2fwww.superiorfoodmachinery.com%2fimages%2fproducts%2fzoom%2f1353314409-63360000.jpg&ehk=e0iyuhAt5DZ4bD%2ffdbdgevFbDo4zU6oHVAaKSQZ5yhA%3d&risl=&pid=ImgRaw&r=0" alt="Oven" />
+          <div class="card-content">
+            <h3 class="card-title">Electric Oven</h3>
+            <p class="card-price">₹5000</p>
+             <p class="card-title">Pansonic 27L covention microwave oven </p>
+            <p class="card-location">America</p>
+               <button class="btn view-btn" onclick="addToCart()">View Details</button>
+  </div>
+</div>
+
+          
+          <!-- Additional result cards would populate here -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer animate-fade-up" style="animation-delay: 2.4s;">
+    <div class="container footer-container">
+      <ul class="footer-links">
+        <li><a href="/help">Help Center</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+      </ul>
+      <div class="social-icons">
+        <a href="#" aria-label="Twitter">🐦</a>
+        <a href="#" aria-label="Facebook">📘</a>
+        <a href="#" aria-label="Instagram">📷</a>
+      </div>
+      <p class="footer-copy">© 2025 All rights reserved.</p>
+      <p class="footer-contact">support@secondlife.com </p>
+    </div>
+  </footer>
+</body>
+</html>
+
+
+
+

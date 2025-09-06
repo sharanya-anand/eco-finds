@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>View Cart</title>
+  <link rel="stylesheet" href="/static/CSS/product_listing.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo"><a href="#">Second Life</a></div>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="/dashboard">Home</a></li>
+          <li><a href="/listings">My Listings</a></li>
+          <li><a href="/view-cart.html" class="active">View Cart</a></li>
+          <li><a href="/profile">Profile</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="listing-main">
+    <div class="container">
+      <h1>Your Cart</h1>
+      <div id="cart-items" class="listings-grid"></div>
+    </div>
+  </main>
+
+  <script>
+    const cartContainer = document.getElementById("cart-items");
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if (cart.length === 0) {
+      cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+    } else {
+      cart.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "listing-card";
+        card.innerHTML = `
+          <img src="${item.image}" alt="${item.title}" />
+          <div class="card-content">
+            <h3 class="card-title">${item.title}</h3>
+            <p class="card-price">${item.price}</p>
+            <p class="card-location">${item.location}</p>
+          </div>
+        `;
+        cartContainer.appendChild(card);
+      });
+    }
+  </script>
+</body>
+</html>
